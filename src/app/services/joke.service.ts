@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable, forkJoin, of, delay} from 'rxjs';
 import { map, concatMap } from 'rxjs/operators';
-import {Joke} from '../models/joke.model';
+import {Joke} from '../store/jokes.state';
 
 const URL = 'https://api.chucknorris.io/jokes/random';
-const DELAY = 10;
+const DELAY = 50;
 
 @Injectable({ providedIn: 'root' })
 export class JokeService {

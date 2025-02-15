@@ -1,11 +1,16 @@
 import { TestBed } from '@angular/core/testing';
-import {AppComponent, TITLE} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import { AppComponent, TITLE } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { provideMockStore } from '@ngrx/store/testing';
+import { RouterModule } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, HttpClientModule],
+      declarations: [AppComponent], // Declare AppComponent here
+      imports: [HttpClientModule, StoreModule.forRoot({}), RouterModule.forRoot([])], // Import RouterModule
+      providers: [provideMockStore()] // Provide mock store
     }).compileComponents();
   });
 
