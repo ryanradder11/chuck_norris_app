@@ -5,7 +5,6 @@ import { selectJokes, selectTimerActive } from './store/jokes.selectors';
 import { Store } from '@ngrx/store';
 import { loadJokes, toggleTimer, toggleFavorite } from './store/jokes.actions';
 
-const DEFAULT_JOKE_COUNT = 10;
 export const TITLE = 'chuck_norris_ui';
 
 @Component({

@@ -5,6 +5,7 @@ import { catchError, map, mergeMap, switchMap, takeUntil } from 'rxjs/operators'
 import * as JokeActions from './jokes.actions';
 import { JokeService } from '../services/joke.service';
 
+const DEFAULT_JOKE_COUNT = 10;
 @Injectable()
 export class JokesEffects {
   constructor(private actions$: Actions, private jokeService: JokeService) {}
@@ -14,7 +15,7 @@ export class JokesEffects {
     this.actions$.pipe(
       ofType(JokeActions.loadJokes),
       mergeMap(() =>
-        this.jokeService.getJokes(10).pipe(
+        this.jokeService.getJokes(DEFAULT_JOKE_COUNT).pipe(
           map(jokes => JokeActions.jokesLoaded({ jokes })),
           catchError(() => of({ type: '[Jokes] Load Failed' }))
         )
