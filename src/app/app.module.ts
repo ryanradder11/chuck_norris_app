@@ -9,6 +9,7 @@ import { JokesEffects } from './store/jokes.effects';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
+import {JokeService} from './services/joke.service';
 
 @NgModule({
   declarations: [
@@ -18,12 +19,11 @@ import { provideHttpClient } from '@angular/common/http';
     RouterModule, // Import RouterModule
     CommonModule,
     BrowserModule,
-    StoreModule.forRoot({}),
-    StoreModule.forFeature('jokes', jokesReducer),
+    StoreModule.forRoot({jokes: jokesReducer}), // Provide mock store
     EffectsModule.forRoot([JokesEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: true }),
   ],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(), JokeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
