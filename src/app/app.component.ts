@@ -17,7 +17,7 @@ export const TITLE = 'chuck_norris_ui';
 export class AppComponent {
   public title = TITLE;
   jokes$: Observable<Joke[]> = of([]);
-  // timerActive$: Observable<boolean> = this.store.select(selectTimerActive);
+  timerActive$: Observable<boolean> = this.store.select(selectTimerActive);
 
   constructor(private store: Store) {
     this.store.dispatch(loadJokes());

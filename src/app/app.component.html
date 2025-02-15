@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
-<button></button>
-<ul>
+<button (click)="toggleTimer()">{{ (timerActive$ | async) ? 'Stop Timer' : 'Start Timer' }}</button>
+  <ul>
 
   <li *ngFor="let joke of jokes$ | async">
     {{ joke.value }}
-
+    <button (click)="toggleFavorite(joke.id)">{{ joke.isFavorite ? '⭐' : '☆' }}</button>
   </li>
 </ul>
 
