@@ -10,14 +10,13 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 docker compose up
 ```
 
-#Chuck Norris Facts
+# Chuck Norris Facts
 
-Chuck Norris can divide by zero.
-When Chuck Norris enters a room, he doesn’t turn the lights on. He turns the dark off.
-Chuck Norris can slam a revolving door.
-Chuck Norris can make a Happy Meal cry.
-Chuck Norris can build an Angular app without writing any code.
-
+- Chuck Norris can divide by zero.
+- When Chuck Norris enters a room, he doesn’t turn the lights on. He turns the dark off.
+- Chuck Norris can slam a revolving door.
+- Chuck Norris can make a Happy Meal cry.
+- Chuck Norris can build an Angular app without writing any code.
 
 ## Development server
 
