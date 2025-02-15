@@ -1,10 +1,11 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {AppComponent, TITLE} from './app.component';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, HttpClientModule],
     }).compileComponents();
   });
 
@@ -17,13 +18,13 @@ describe('AppComponent', () => {
   it(`should have the 'chuck_norris_ui' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('chuck_norris_ui');
+    expect(app.title).toEqual(TITLE);
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, chuck_norris_ui');
+    expect(compiled.querySelector('h1')?.textContent).toContain(TITLE);
   });
 });

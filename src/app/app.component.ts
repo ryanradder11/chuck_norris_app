@@ -6,6 +6,7 @@ import {JokeService} from './services/joke.service';
 import {AsyncPipe, NgForOf} from '@angular/common';
 
 const DEFAULT_JOKE_COUNT = 10;
+export const TITLE = 'chuck_norris_ui';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ const DEFAULT_JOKE_COUNT = 10;
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
- public title = 'chuck_norris_ui';
+ public title = TITLE;
  public jokes$: Observable<Joke[]> = of([]);
 
   constructor(private jokeService: JokeService) {
